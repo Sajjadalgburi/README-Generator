@@ -9,10 +9,11 @@ const generateMarkdown = ({
   contribution,
   test,
   selectedLicense,
-}) => `
-# ${title}
+}) =>
+  `# ${title}
 
-## ${description}
+## Description
+${description}
 
 ## Table of Contents
 
@@ -22,15 +23,20 @@ const generateMarkdown = ({
 - [Contribution](#contribution)
 - [Test](#test)
 
-## ${installation}
+## Installation
+${installation}
 
-## ${usage}
+## Usage
+${usage}
 
 ## ${selectedLicense}
 
-## ${contribution}
+## How to Contribute
+${contribution}
 
-## ${test}
+## Tests
+${test}
+
 `;
 
 // Title
@@ -51,41 +57,51 @@ const licenseOptions = [
   "Creative Commons Licenses",
 ];
 
-inquirer.prompt([
-  {
-    type: "input",
-    name: "title",
-    message: "Enter Project Title",
-  },
-  {
-    type: "input",
-    name: "description",
-    message: "Add Project Description",
-  },
-  {
-    type: "input",
-    name: "Installation",
-    message: "Add Installation Instructions",
-  },
-  {
-    type: "input",
-    name: "UsageInformation",
-    message: "Add Usage Information",
-  },
-  {
-    type: "input",
-    name: "Contribution",
-    message: "Add Contribution Guidelines",
-  },
-  {
-    type: "input",
-    name: "Test",
-    message: "Add Test Instructions",
-  },
-  {
-    type: "list",
-    name: "selectedLicense",
-    message: "Select A License",
-    choices: licenseOptions,
-  },
-]);
+inquirer
+  .prompt([
+    {
+      type: "input",
+      name: "title",
+      message: "Enter Project Title",
+    },
+    {
+      type: "input",
+      name: "description",
+      message: "Add Project Description",
+    },
+    {
+      type: "input",
+      name: "installation",
+      message: "Add Installation Instructions",
+    },
+    {
+      type: "input",
+      name: "usage",
+      message: "Add Usage Information",
+    },
+    {
+      type: "input",
+      name: "contribution",
+      message: "Add Contribution Guidelines",
+    },
+    {
+      type: "input",
+      name: "test",
+      message: "Add Test Instructions",
+    },
+    {
+      type: "list",
+      name: "selectedLicense",
+      message: "Select A License",
+      choices: licenseOptions,
+    },
+  ])
+  .then((answers) => {
+    const markedownContent = generateMarkdown(answers);
+
+    fs.writeFile("README.md", markedownContent, (err) => {
+      err
+        ? console.error(err)
+        : console.log("Successfully generated README.md");
+    });
+  });
