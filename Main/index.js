@@ -9,6 +9,8 @@ const generateMarkdown = ({
   contribution,
   test,
   selectedLicense,
+  github,
+  email,
 }) =>
   `# ${title}
 
@@ -29,7 +31,8 @@ ${installation}
 ## Usage
 ${usage}
 
-## ${selectedLicense}
+## License 
+This application is covered under the ${selectedLicense}
 
 ## How to Contribute
 ${contribution}
@@ -37,7 +40,11 @@ ${contribution}
 ## Tests
 ${test}
 
-`;
+## Questions
+
+how to reach me with additional questions!
+GitHub profile: https://github.com/${github}
+email: ${email}`;
 
 const licenseOptions = [
   "MIT License",
@@ -54,6 +61,16 @@ const preMessage =
 console.log(preMessage);
 inquirer
   .prompt([
+    {
+      type: "input",
+      name: "github",
+      message: "Enter Your Github Username",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "Enter email",
+    },
     {
       type: "input",
       name: "title",
