@@ -39,16 +39,6 @@ ${test}
 
 `;
 
-// Title
-// Description
-// Table of Contents
-// installation
-// usage information
-// conturbution information
-// test instructions
-// lastly questions => will have user github whcih will be a link
-// also email with "instructions on how to reach me with additional questions"
-
 const licenseOptions = [
   "MIT License",
   "GNU General Public License (GPL)",
@@ -57,6 +47,11 @@ const licenseOptions = [
   "Creative Commons Licenses",
 ];
 
+// Additional message before the questions
+const preMessage =
+  "\nWelcome to the README.md generator. Please Press Enter if You Wish to Skip:\n";
+
+console.log(preMessage);
 inquirer
   .prompt([
     {
