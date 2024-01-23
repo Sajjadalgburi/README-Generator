@@ -1,6 +1,5 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-
 const generateMarkdown = ({
   title,
   description,
@@ -25,25 +24,25 @@ ${description}
 - [Contribution](#contribution)
 - [Test](#test)
 
-## Installation
+## Installation <a name="installation"></a>
 ${installation}
 
-## Usage
+## Usage <a name="usage"></a>
 ${usage}
 
-## License 
+## License <a name="license"></a>
 This application is covered under the ${selectedLicense}
 
-## How to Contribute
+## How to Contribute <a name="contribution"></a>
 ${contribution}
 
-## Tests
+## Tests <a name="test"></a>
 ${test}
 
 ## Questions
 
 how to reach me with additional questions!
-GitHub profile: https://github.com/${github}
+GitHub profile: [https://github.com/${github}](https://github.com/${github})
 email: ${email}`;
 
 const licenseOptions = [
