@@ -1,6 +1,18 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
+const generatedMarkdown = ({
+  title,
+  description,
+  installation,
+  usage,
+  contribution,
+  test,
+  selectedLicense,
+}) => {
+  return;
+};
+
 // Title
 // Description
 // Table of Contents
