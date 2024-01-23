@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-const generatedMarkdown = ({
+const generateMarkdown = ({
   title,
   description,
   installation,
@@ -9,9 +9,29 @@ const generatedMarkdown = ({
   contribution,
   test,
   selectedLicense,
-}) => {
-  return;
-};
+}) => `
+# ${title}
+
+## ${description}
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contribution](#contribution)
+- [Test](#test)
+
+## ${installation}
+
+## ${usage}
+
+## ${selectedLicense}
+
+## ${contribution}
+
+## ${test}
+`;
 
 // Title
 // Description
