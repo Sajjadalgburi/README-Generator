@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+
 const generateMarkdown = ({
   title,
   description,
@@ -10,8 +11,19 @@ const generateMarkdown = ({
   selectedLicense,
   github,
   email,
-}) =>
-  `# ${title}
+}) => {
+  // Function to generate a badge URL based on the selected license
+  const generateBadgeUrl = (license) => {
+    const encodedLicense = encodeURIComponent(license);
+    return `https://img.shields.io/badge/license-${encodedLicense}-brightgreen`;
+  };
+
+  // Generate the badge URL for the selected license
+  const badgeUrl = generateBadgeUrl(selectedLicense);
+
+  return `# ${title}
+
+![License Badge](${badgeUrl})
 
 ## Description
 ${description}
@@ -31,7 +43,8 @@ ${installation}
 ${usage}
 
 ## License <a name="license"></a>
-This application is covered under the ${selectedLicense}
+This application is covered under the ${selectedLicense} license. 
+Please see the [License Information](${badgeUrl}) for more details.
 
 ## How to Contribute <a name="contribution"></a>
 ${contribution}
@@ -41,9 +54,10 @@ ${test}
 
 ## Questions
 
-how to reach me with additional questions!
+How to reach me with additional questions!
 GitHub profile: [https://github.com/${github}](https://github.com/${github})
-email: ${email}`;
+Email: ${email}`;
+};
 
 const licenseOptions = [
   "MIT License",
