@@ -55,8 +55,11 @@ ${test}
 ## Questions
 
 How to reach me with additional questions!
-GitHub profile: [https://github.com/${github}](https://github.com/${github})
-Email: ${email}`;
+
+- GitHub profile: https://github.com/${github}
+- Email: ${email}
+
+`;
 };
 
 const licenseOptions = [
