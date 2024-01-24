@@ -23,7 +23,7 @@ const generateMarkdown = ({
 
   return `# ${title}
 
-![License Badge](${badgeUrl})
+[![License Badge](${badgeUrl})](${badgeUrl})
 
 ## Description
 ${description}
@@ -35,28 +35,29 @@ ${description}
 - [License](#license)
 - [Contribution](#contribution)
 - [Test](#test)
+- [Questions](#questions)
 
-## Installation <a name="installation"></a>
+## Installation
 ${installation}
 
-## Usage <a name="usage"></a>
+## Usage
 ${usage}
 
-## License <a name="license"></a>
+## License
 This application is covered under the ${selectedLicense} license. 
 Please see the [License Information](${badgeUrl}) for more details.
 
-## How to Contribute <a name="contribution"></a>
+## Contribution
 ${contribution}
 
-## Tests <a name="test"></a>
+## Test
 ${test}
 
 ## Questions
 
 How to reach me with additional questions!
 
-- GitHub profile: https://github.com/${github}
+- GitHub profile: [${github}](https://github.com/${github})
 - Email: ${email}
 
 `;
