@@ -55,10 +55,10 @@ ${test}
 
 ## Questions
 
-** How to reach me with additional questions! ** 
+**How to reach me with additional questions!** 
 
 - GitHub profile: [GitHub Account](https://github.com/${github})
-- Email:  [Email](${email})
+- Email: ${email}
 
 `;
 };
