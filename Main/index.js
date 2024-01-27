@@ -1,69 +1,9 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-
-const generateMarkdown = ({
-  title,
-  description,
-  installation,
-  usage,
-  contribution,
-  test,
-  selectedLicense,
-  github,
-  email,
-}) => {
-  // Function to generate a badge URL based on the selected license
-  const generateBadgeUrl = (license) => {
-    const encodedLicense = encodeURIComponent(license);
-    return `https://img.shields.io/badge/license-${encodedLicense}-brightgreen`;
-  };
-
-  // Generate the badge URL for the selected license
-  const badgeUrl = generateBadgeUrl(selectedLicense);
-
-  return `# ${title}
-
-[![License Badge](${badgeUrl})](${badgeUrl})
-
-## Description
-${description}
-
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contribution](#contribution)
-- [Test](#test)
-- [Questions](#questions)
-
-## Installation
-${installation}
-
-## Usage
-${usage}
-
-## License
-This application is covered under the ${selectedLicense} license. 
-Please see the [License Information](${badgeUrl}) for more details.
-
-## Contribution
-${contribution}
-
-## Test
-${test}
-
-## Questions
-
-**How to reach me with additional questions!** 
-
-- GitHub profile: [GitHub Account](https://github.com/${github})
-- Email: ${email}
-
-`;
-};
+const generateMarkdown = require("./generateMarkdown");
 
 const licenseOptions = [
+  "None",
   "MIT License",
   "GNU General Public License (GPL)",
   "Apache License 2.0",
