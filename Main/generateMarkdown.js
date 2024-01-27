@@ -156,7 +156,7 @@ ${renderTestLink(test)}
 
 ${renderInstallationSection(installation)}
 
-${renderUsageDescriptionSection(usage)}
+${renderUsageSection(usage)}
 
 ${renderLicenseSection(selectedLicense)}
 
