@@ -43,6 +43,16 @@ This application is covered under the ${license} license.`;
   }
 }
 
+function renderDescriptionSection(description) {
+  if (description === "") {
+    return "";
+  } else {
+    return `## Description 
+              ${description}
+    `;
+  }
+}
+
 const generateMarkdown = ({
   title,
   description,
@@ -61,8 +71,7 @@ const generateMarkdown = ({
 
 ${badgeUrl}
 
-## Description
-${description}
+${renderDescriptionSection(description)}
 
 ## Table of Contents
 
