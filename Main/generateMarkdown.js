@@ -39,7 +39,7 @@ function renderLicenseSection(license) {
   } else {
     return `
 ## License
-This application is covered under the ${license} license.`;
+This application is covered under the ${license}.`;
   }
 }
 
@@ -168,7 +168,7 @@ ${renderTestSection(test)}
 
 **How to reach me with additional questions!** 
 
-- GitHub profile: [GitHub Account](https://github.com/${github})
+- GitHub: [GitHub Account](https://github.com/${github})
 - Email: ${email}
 
 `;
