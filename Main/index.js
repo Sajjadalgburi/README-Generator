@@ -22,11 +22,23 @@ inquirer
       type: "input",
       name: "github",
       message: "Enter Your Github Username",
+      validate: function (input) {
+        if (input.trim() !== "") {
+          return true;
+        }
+        return "Github username cannot be empty";
+      },
     },
     {
       type: "input",
       name: "email",
       message: "Enter email",
+      validate: function (input) {
+        if (/^\S+@\S+\.\S+$/.test(input.trim())) {
+          return true;
+        }
+        return "Please enter a valid email address";
+      },
     },
     {
       type: "input",
