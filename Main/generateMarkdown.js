@@ -53,6 +53,42 @@ function renderDescriptionSection(description) {
   }
 }
 
+function renderInstallationSection(installation) {
+  if (installation === "") {
+    return "";
+  } else {
+    return `## Installation
+${installation}
+    `;
+  }
+}
+
+function renderInstallationLink(installation) {
+  if (installation === "") {
+    return "";
+  } else {
+    return "- [Installation](#installation)";
+  }
+}
+
+function renderUsageDescriptionSection(usage) {
+  if (usage === "") {
+    return "";
+  } else {
+    return `## Installation
+${usage}
+    `;
+  }
+}
+
+function renderUsageLink(usage) {
+  if (usage === "") {
+    return "";
+  } else {
+    return "- [Usage](#usage)";
+  }
+}
+
 const generateMarkdown = ({
   title,
   description,
@@ -75,18 +111,16 @@ ${renderDescriptionSection(description)}
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
+${renderInstallationLink(installation)}
+${renderUsageLink(usage)}
 ${renderLicenseLink(selectedLicense)}
 - [Contribution](#contribution)
 - [Test](#test)
 - [Questions](#questions)
 
-## Installation
-${installation}
+${renderInstallationSection(installation)}
 
-## Usage
-${usage}
+${renderUsageDescriptionSection(usage)}
 
 ${renderLicenseSection(selectedLicense)}
 
