@@ -107,6 +107,24 @@ function renderContributionLink(contribution) {
   }
 }
 
+function renderTestSection(test) {
+  if (test === "") {
+    return "";
+  } else {
+    return `## Test
+${test}
+`;
+  }
+}
+
+function renderTestLink(test) {
+  if (test === "") {
+    return "";
+  } else {
+    return "- [Test](#test)";
+  }
+}
+
 const generateMarkdown = ({
   title,
   description,
@@ -133,7 +151,7 @@ ${renderInstallationLink(installation)}
 ${renderUsageLink(usage)}
 ${renderLicenseLink(selectedLicense)}
 ${renderContributionLink(contribution)}
-- [Test](#test)
+${renderTestLink(test)}
 - [Questions](#questions)
 
 ${renderInstallationSection(installation)}
@@ -144,8 +162,7 @@ ${renderLicenseSection(selectedLicense)}
 
 ${renderContributionSection(contribution)}
 
-## Test
-${test}
+${renderTestSection(test)}
 
 ## Questions
 
