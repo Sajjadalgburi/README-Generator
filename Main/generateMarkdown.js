@@ -48,7 +48,7 @@ function renderDescriptionSection(description) {
     return "";
   } else {
     return `## Description 
-              ${description}
+    ${description}
     `;
   }
 }
@@ -75,7 +75,7 @@ function renderUsageSection(usage) {
   if (usage === "") {
     return "";
   } else {
-    return `## Installation
+    return `## Usage
 ${usage}
     `;
   }
