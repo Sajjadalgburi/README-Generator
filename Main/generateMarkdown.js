@@ -48,8 +48,8 @@ function renderDescriptionSection(description) {
     return "";
   } else {
     return `## Description 
-    ${description}
-    `;
+${description}
+  `;
   }
 }
 
@@ -59,7 +59,7 @@ function renderInstallationSection(installation) {
   } else {
     return `## Installation
 ${installation}
-    `;
+`;
   }
 }
 
