@@ -71,7 +71,7 @@ function renderInstallationLink(installation) {
   }
 }
 
-function renderUsageDescriptionSection(usage) {
+function renderUsageSection(usage) {
   if (usage === "") {
     return "";
   } else {
@@ -86,6 +86,24 @@ function renderUsageLink(usage) {
     return "";
   } else {
     return "- [Usage](#usage)";
+  }
+}
+
+function renderContributionSection(contribution) {
+  if (contribution === "") {
+    return "";
+  } else {
+    return `## Contribution
+${contribution}
+`;
+  }
+}
+
+function renderContributionLink(contribution) {
+  if (contribution === "") {
+    return "";
+  } else {
+    return "- [Contribution](#contribution)";
   }
 }
 
@@ -114,7 +132,7 @@ ${renderDescriptionSection(description)}
 ${renderInstallationLink(installation)}
 ${renderUsageLink(usage)}
 ${renderLicenseLink(selectedLicense)}
-- [Contribution](#contribution)
+${renderContributionLink(contribution)}
 - [Test](#test)
 - [Questions](#questions)
 
@@ -124,8 +142,7 @@ ${renderUsageDescriptionSection(usage)}
 
 ${renderLicenseSection(selectedLicense)}
 
-## Contribution
-${contribution}
+${renderContributionSection(contribution)}
 
 ## Test
 ${test}
